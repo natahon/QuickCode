@@ -3,11 +3,11 @@
  * @Author: YingBinXia 
  * @Date: 2019-07-19 11:19:04 
  * @Last Modified by: YingBinXia
- * @Last Modified time: 2019-07-19 11:30:55
+ * @Last Modified time: 2019-07-22 17:52:28
  */
-namespace Code\Wechat;
-
-class AcessToken{
+namespace Core\Wechat;
+use Help\Request as Request;
+class AccessToken{
     private $appid;
     private $secret;
     
@@ -16,8 +16,10 @@ class AcessToken{
         $this->secret = $secret;
     }
 
-    public static function _getAccessToken(){
+    public function _getAccessToken(){
         $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$this->appid}&secret={$this->secret}"; 
+        $data = Request::_HttpRequest($url);
+        var_dump($data);
     }
 }
 
