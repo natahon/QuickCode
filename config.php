@@ -19,4 +19,6 @@ $array = array(
     'error' => TEST.'/Error.php',
 );
 
-foreach ($array as $k => $v) {require $v;}
+foreach ($array as $k => $v) {
+    require $v;
+}

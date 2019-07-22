@@ -30,15 +30,14 @@ class Loader{
         if (is_file($file)) {include $file;}
     }
 }
-// require_once "config.php";
+require_once "config.php";
 spl_autoload_register('Loader::autoload');
-// set_error_handler('getErrorMsg');
+set_error_handler('getErrorMsg');
 $a = new Core\Wechat\AccessToken();
+
 $appid = 'wxd67180f31553c983';
 $secret = '3d0aea53cf0032076150e4d0009517b6';
 $a->_Assignment($appid,$secret);
 var_dump($a->_getAccessToken());
-// trigger_error("123",E_NOTICE);
-
 
 
